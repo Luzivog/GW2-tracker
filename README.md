@@ -6,6 +6,6 @@ It has only 1 command for the moment (maybe more in the future) that is ``/progr
 
 ![](./images/display_example.png)
 
-If you want to use it you need to fill in config.example.js and rename config.example.js to config.js.
+If you want to use it you need to fill in config.example.js and rename it to config.js.
 
 You'll also need to install the modules ``cross-fetch`` and ``discord.js``.
