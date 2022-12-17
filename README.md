@@ -9,3 +9,5 @@ It was made using the [gw2 api v2](https://wiki.guildwars2.com/wiki/API:Main) an
 If you want to use it you need to fill in config.example.js and rename it to config.js.
 
 You'll also need to install the modules [discord.js](https://www.npmjs.com/package/discord.js) and [cross-fetch](https://www.npmjs.com/package/cross-fetch).
+
+For hosting the discord bot I personally recommend using [fluidnodes](https://fluidnodes.com/) where you can host for free 24/7. It is also really easy to use.
