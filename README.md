@@ -7,3 +7,5 @@ It was made using the [gw2 api v2](https://wiki.guildwars2.com/wiki/API:Main) an
 ![](./images/display_example.png)
 
 If you want to use it you need to fill in config.example.js and rename it to config.js.
+
+You'll also need to install the modules [discord.js](https://www.npmjs.com/package/discord.js) and [cross-fetch](https://www.npmjs.com/package/cross-fetch).
