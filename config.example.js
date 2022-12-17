@@ -11,7 +11,7 @@ module.exports = {
         gold_coin: "id for your gold coin custom emoji",
         silver_coin: "id for your silver_coin custom emoji",
         bronze_coin: "id for your bronze_coin custom emoji"
-        // you can find the images for customs emojis in /image folder
+        // you can find the images for customs emojis in the /images folder
     },
 
     api_keys: [
