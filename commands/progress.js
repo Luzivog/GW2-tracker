@@ -27,7 +27,7 @@ module.exports = {
             accounts.push(new_acc);
             embedFields.push({
                 name: 'Compte: '+new_acc.account['name'],
-                value: `Argent: ${new_acc.gold} ${emojis.gold_coin} ${new_acc.silver} ${emojis.silver_coin} ${new_acc.bronze} ${emojis.bronze_coin}\nTemps de jeu total : ${seconds_to_hm(new_acc.account['age'])} ⌛\n\nMain: ${new_acc.main_character['name']} (level ${new_acc.main_character['level']})\nClasse : ${new_acc.main_character['profession']}\nTemps de jeu : ${seconds_to_hm(new_acc.main_character['age'])} ⌛\nDeath count: ${new_acc.main_character['deaths']} 💀\n\u1CBC\u1CBC`
+                value: `Argent: ${new_acc.gold} ${emojis.gold_coin} ${new_acc.silver} ${emojis.silver_coin} ${new_acc.bronze} ${emojis.bronze_coin}\nTemps de jeu total: ${seconds_to_hm(new_acc.account['age'])} ⌛\n\nMain: ${new_acc.main_character['name']} (level ${new_acc.main_character['level']})\nClasse: ${new_acc.main_character['profession']}\nTemps de jeu: ${seconds_to_hm(new_acc.main_character['age'])} ⌛\nDeath count: ${new_acc.main_character['deaths']} 💀\n\u1CBC\u1CBC`
             })
         };
 
