@@ -30,7 +30,7 @@ class Account {
         this.account = account;
         this.characters = await call_api(this.api_key, 'characters', {'ids':'all'});
 
-        this.main_character = this.characters.sort((c) => {return c['age']})[0];
+        this.main_character = this.characters.sort(c =>  -c['age'])[0];
 
         let wallet = await call_api(this.api_key, 'account/wallet');
         this.wallet = wallet;
