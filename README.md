@@ -11,3 +11,4 @@ If you want to use it you need to fill in config.example.js and rename it to con
 You'll also need to install the modules [discord.js](https://www.npmjs.com/package/discord.js) and [cross-fetch](https://www.npmjs.com/package/cross-fetch).
 
 For hosting the discord bot I personally recommend using [fluidnodes](https://fluidnodes.com/) where you can host for free 24/7. It is also really easy to use.
+Depending on when you see this fluidnodes may not be a thing anymore.
