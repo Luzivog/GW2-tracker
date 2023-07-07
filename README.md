@@ -2,7 +2,7 @@
 
 ## What is this?
 
-This discord bot allows you to track the progress of you and your friends on guild wars 2. It was made using the [gw2 api v2](https://wiki.guildwars2.com/wiki/API:Main) and has 1 command that is ``/progress`` and that displays :
+This discord bot allows you to track the progress of you and your friends on guild wars 2. It was made using the [gw2 api v2](https://wiki.guildwars2.com/wiki/API:Main) and has 1 command, ``/progress``, that displays:
 
 ![](./images/display_example.png)
 
@@ -10,7 +10,7 @@ As you can see the bot uses custom emojis, you will need to add them to your dis
 
 ## ⛓ Docker installation
 
-You can use this discord bot as a Docker container. To do so, you need to install Docker on your machine. Create a Discord bot and get the token, you can do so on the [discord developer portal](https://discord.com/developers/docs/intro). After you will need to get your [guild wars 2 API key](https://account.arena.net/applications). Then, you can run the following command:
+You can use this discord bot as a Docker container. To do so, you need to [install Docker](https://www.docker.com/products/docker-desktop/) on your machine. Create a Discord bot and get the token, you can do so on the [discord developer portal](https://discord.com/developers/docs/intro). After, you will need to get your [guild wars 2 API key](https://account.arena.net/applications). Then, you can run the following command:
 
 ```sh
 docker run -d -e "BOT_TOKEN=Your Discord Token" -e "API_KEYS=API_KEY_1,API_KEY_2,..." thediscorders/selfrythm
