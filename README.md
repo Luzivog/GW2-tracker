@@ -20,8 +20,8 @@ docker run -d -e "BOT_TOKEN=Your Discord Token" -e "API_KEYS=API_KEY_1,API_KEY_2
 1) [Create a Discord bot](https://discord.com/developers/docs/intro) and get the token.
 2) Clone the repository and navigate in the folder.
 ```
-git clone https://github.com/Luzivog/gw2-Tracker.git
-cd gw2-Tracker
+git clone https://github.com/Luzivog/GW2-tracker.git
+cd GW2-tracker
 ```
 3) Install all the modules with ``npm i``.
 4) Fill in the file ``config.js`` with the bot token (step 1) and with your [guild wars 2 api key(s)](https://account.arena.net/applications).
