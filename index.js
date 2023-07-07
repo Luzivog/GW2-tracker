@@ -4,6 +4,9 @@ const path = require('path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 
 const { BOT_TOKEN } = require('./config.js');
+const { initCommands } = require('./deploy-commands.js');
+const { exit } = require('node:process');
+require('dotenv').config();
 
 
 const client = new Client({ 
@@ -29,12 +32,17 @@ for (const file of commandFiles) {
 	else console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
 };
 
-client.login(BOT_TOKEN);
+let token;
+if (process.env.BOT_TOKEN) {
+	console.log("Using environnement variables.")
+	token = process.env.BOT_TOKEN;
+} else token = BOT_TOKEN;
 
+client.login(token);
 
 client.once(Events.ClientReady, (bot) => {
 	console.log(`Ready! Logged in as ${bot.user.tag}`);
-    require('./deploy-commands.js');
+    initCommands(bot);
 });
 
 client.on(Events.InteractionCreate, async interaction => {

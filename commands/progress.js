@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { Account } = require('../Account');
 const config = require('../config');
+require("dotenv").config();
 
 const seconds_to_hm = (sec) => `${sec / 3600 >> 0}h ${sec % 3600 / 60 >> 0}min`
 
@@ -14,20 +15,24 @@ module.exports = {
 
         emojis = {};
 
-        for (let k of Object.keys(config.emoji_ids)) emojis[k] = interaction.options.client.emojis.cache.get(config.emoji_ids[k]);
+        for (let emoji_name of config.emoji_names) emojis[emoji_name] = interaction.options.client.emojis.cache.find(emoji => emoji.name === emoji_name);
 
         await interaction.deferReply();
 
         let accounts = [];
         let embedFields = [];
+        let apiKeys = [];
 
-        for (let api_key of config.api_keys) {
+        if (process.env.API_KEYS) apiKeys = process.env.API_KEYS.split(",");
+        else apiKeys = config.api_keys;
+
+        for (let api_key of apiKeys) {
             let new_acc = new Account(api_key);
             await new_acc.init();
             accounts.push(new_acc);
             embedFields.push({
-                name: 'Compte: '+new_acc.account['name'],
-                value: `Argent: ${new_acc.gold} ${emojis.gold_coin} ${new_acc.silver} ${emojis.silver_coin} ${new_acc.bronze} ${emojis.bronze_coin}\nTemps de jeu total: ${seconds_to_hm(new_acc.account['age'])} ⌛\n\nMain: ${new_acc.main_character['name']} (level ${new_acc.main_character['level']})\nClasse: ${new_acc.main_character['profession']}\nTemps de jeu: ${seconds_to_hm(new_acc.main_character['age'])} ⌛\nDeath count: ${new_acc.main_character['deaths']} 💀\n\u1CBC\u1CBC`
+                name: 'Account: '+new_acc.account['name'],
+                value: `Money: ${new_acc.gold} ${emojis.gold_coin} ${new_acc.silver} ${emojis.silver_coin} ${new_acc.bronze} ${emojis.bronze_coin}\nTotal time played: ${seconds_to_hm(new_acc.account['age'])} ⌛\n\nMain: ${new_acc.main_character['name']} (level ${new_acc.main_character['level']})\nClass: ${new_acc.main_character['profession']}\nTime played: ${seconds_to_hm(new_acc.main_character['age'])} ⌛\nDeath count: ${new_acc.main_character['deaths']} 💀\n\u1CBC\u1CBC`
             })
         };
 
