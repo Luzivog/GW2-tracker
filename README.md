@@ -2,9 +2,9 @@
 
 ## What is this?
 
-This discord bot allows you to track the progress of you and your friends on guild wars 2. It was made using the [gw2 api v2](https://wiki.guildwars2.com/wiki/API:Main) and has 1 command, ``/progress``, that displays:
+This discord bot allows you to track the progress of you and your friends on guild wars 2. It was made using the [gw2 api v2](https://wiki.guildwars2.com/wiki/API:Main) and has 1 command, ``/progress``:
 
-![](./images/display_example.png)
+![](./images/example_gif.gif)
 
 As you can see the bot uses custom emojis, you will need to add them to your discord server. They are available in the ``images`` folder. Make sure that you don't rename them.
 
